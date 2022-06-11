@@ -18,7 +18,7 @@ app = Flask(__name__)
 ALLOW_EXTENSION = {'jpg','jpeg'}
 
 # Load the Machine Learning Model
-model = tf.keras.models.load_model('model/model1_mobilenet.h5',custom_objects={'KerasLayer':hub.KerasLayer})
+model = tf.keras.models.load_model('model1_mobilenet.h5',custom_objects={'KerasLayer':hub.KerasLayer})
 
 # Function to allow files format
 def allow_file(filename):
