@@ -58,6 +58,7 @@ def predict():
 
             if result == 0:
                 Name = "Acne and Rosacea" +" ({:.0%})".format(max_value)
+                Recommendation = "14.92 gram"
             elif result == 1:
                 Name = "Eczema" +" ({:.0%})".format(max_value)
             elif result == 2:
@@ -66,7 +67,7 @@ def predict():
                 Name = "Psoriasis pictures Lichen Planus" +" ({:.0%})".format(max_value)
             elif result == 4:
                 Name = "Seborrheic Keratoses" +" ({:.0%})".format(max_value)
-            return jsonify({'Name' : Name})
+            return jsonify({'Name' : Name, 'Recommendation' : Recommendation})
         else:
             res = jsonify({'message': 'Image extension is not allowed'})
             res.code_status = 400
