@@ -6,8 +6,12 @@ COPY . /app
 # Sets the working directory
 WORKDIR /app
 
+
 # Upgrade PIP
 RUN pip install --upgrade pip
+
+# Install production dependencies.
+RUN pip install Flask gunicorn
 
 #Install python libraries from requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
