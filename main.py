@@ -27,7 +27,7 @@ def allow_file(filename):
 # Function to read the images
 def read_image(image):
     img = Image.open(BytesIO(image))
-    img = img.resize((160, 160), Image.ANTIALIAS)
+    img = img.resize((150, 150), Image.ANTIALIAS)
     img = img_to_array(img)
     img /= 255
     img = np.expand_dims(img, axis=0)
