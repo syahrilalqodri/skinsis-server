@@ -17,7 +17,8 @@ RUN pip install Flask gunicorn
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Set $PORT environment variable
-ENV PORT 8080
+EXPOSE 5000
+ENV PORT 5000
 
 # Run the web service on container startup
 CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
